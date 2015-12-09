@@ -29,7 +29,7 @@ $(document).ready(function() {
 
 
   $('#albums').on('click', '.add-song', function(e) {
-    var id= $(this).parents('.album').data('album-id');
+    var id = $(this).parents('.album').data('album-id');
     console.log('id',id);
     $('#songModal').data('album-id', id);
     $('#songModal').modal();
@@ -38,6 +38,15 @@ $(document).ready(function() {
   $('#albums').on('click', '.delete-album', function(e) {
     var id = $(this).parents('.album').data('album-id');
     console.log('id', id);
+    $.ajax({
+      method: 'DELETE',
+      url: ('/api/albums/' + id),
+      success: function () {
+        console.log("Now I am become death, Destroyer of worlds!");
+        $('#' + id).remove();
+
+      }
+    });
   });
 
   $('#saveSong').on('click', handleNewSongSubmit);
@@ -102,7 +111,7 @@ function renderAlbum(album) {
 
   var albumHtml =
   "        <!-- one album -->" +
-  "        <div class='row album' data-album-id='" + album._id + "'>" +
+  "        <div class='row album' data-album-id='" + album._id + "' id='" + album._id + "'>" +
   "          <div class='col-md-10 col-md-offset-1'>" +
   "            <div class='panel panel-default'>" +
   "              <div class='panel-body'>" +
