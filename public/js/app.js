@@ -133,7 +133,12 @@ function renderAlbum(album) {
 
   "              <div class='panel-footer'>" +
   "                <button class='btn btn-primary add-song'>Add Song</button>" +
+  "                <button class='btn btn-danger delete-song'>Delete Album</button>" +                
   "              </div>" +
+
+  // "              <div class='panel-footer'>" +
+
+  // "              </div>" +
 
   "            </div>" +
   "          </div>" +
