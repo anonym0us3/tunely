@@ -91,6 +91,15 @@ app.post('/api/albums/:albumId/songs', function songsCreate(req, res) {
 
 });
 
+app.delete('/api/albums/:id', function albumDelete(req, res) {
+  console.log('deleting id: ' + req.params.id);
+  db.Album.remove({_id: req.params.id}, function (err) {
+    if (err) { console.log('error', err); }
+    console.log('very niiiiiice!!');
+    res.status(204).send();
+  });
+});
+
 
 
 /**********
