@@ -49,6 +49,19 @@ $(document).ready(function() {
     });
   });
 
+//
+//
+// CAPTAIN CAPS-LOCK PROCEEDING TO YELL AT YOU!!!!
+//
+// YOU STOPPED AT SUCCESSFULLY ADDING AN 'EDIT ALBUM' BUTTON, AND ON-CLICK,
+// LOGGING ITS ID IN ZE CONSOLE. CONTINUE FROM HERE.
+//
+//
+  $('#albums').on('click', '.edit-album', function(e) {
+    var id = $(this).parents('.album').data('album-id');
+    console.log('id', id);
+  });
+
   $('#saveSong').on('click', handleNewSongSubmit);
 
 });
@@ -147,7 +160,8 @@ function renderAlbum(album) {
 
   "              <div class='panel-footer'>" +
   "                <button class='btn btn-primary add-song'>Add Song</button>" +
-  "                <button class='btn btn-danger delete-album'>Delete Album</button>" +                
+  "                <button class='btn btn-warning edit-album'>Edit Album</button>" + 
+  "                <button class='btn btn-danger delete-album'>Delete Album</button>" + 
   "              </div>" +
 
   // "              <div class='panel-footer'>" +
